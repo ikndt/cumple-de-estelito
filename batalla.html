@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Las aventuras de Estelito
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="battle-page">
+
+
+    <a href="index.html" class="back-home">
+        volver a la invitación
+    </a>
+
+
+    <section class="game-header">
+
+        <p class="small-title">
+            misión secreta
+        </p>
+
+        <h1>
+            Las aventuras de Estelito
+        </h1>
+
+        <p>
+            derrota a todos los monstruos
+            antes de que se acabe tu energía
+        </p>
+
+    </section>
+
+
+    <div class="level-info">
+
+        <div>
+            <span>nivel</span>
+            <strong id="levelText">1</strong>
+        </div>
+
+        <div>
+            <span>energía</span>
+            <strong id="playerHealthText">100</strong>
+        </div>
+
+        <div>
+            <span>monstruo</span>
+            <strong id="monsterHealthText">100</strong>
+        </div>
+
+    </div>
+
+
+    <div class="battle-screen" id="battleScreen">
+
+        <div class="battle-moon"></div>
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+
+        <div class="mountain mountain-one"></div>
+        <div class="mountain mountain-two"></div>
+
+        <div class="ground"></div>
+
+
+        <!-- ESTELITO -->
+
+        <div class="battle-cat-player" id="battleCat">
+
+            <div class="battle-witch-hat">
+                <div class="battle-hat-top"></div>
+                <div class="battle-hat-band"></div>
+                <div class="battle-hat-bottom"></div>
+            </div>
+
+
+            <div class="battle-cat-tail"></div>
+
+            <div class="battle-cat-body">
+
+                <div class="cat-body-stripe cbs1"></div>
+                <div class="cat-body-stripe cbs2"></div>
+                <div class="cat-body-stripe cbs3"></div>
+
+            </div>
+
+
+            <div class="battle-cat-head">
+
+                <div class="battle-cat-ear battle-cat-ear-left"></div>
+                <div class="battle-cat-ear battle-cat-ear-right"></div>
+
+                <div class="cat-face-stripe cfs1"></div>
+                <div class="cat-face-stripe cfs2"></div>
+                <div class="cat-face-stripe cfs3"></div>
+
+                <div class="battle-cat-eye battle-cat-eye-left"></div>
+                <div class="battle-cat-eye battle-cat-eye-right"></div>
+
+                <div class="battle-cat-nose"></div>
+
+            </div>
+
+
+            <div class="magic-orb" id="magicOrb"></div>
+
+        </div>
+
+
+        <!-- MONSTRUO -->
+
+        <div class="monster" id="monster">
+
+            <div class="monster-horns">
+
+                <div class="horn horn-left"></div>
+                <div class="horn horn-right"></div>
+
+            </div>
+
+            <div class="monster-body">
+
+                <div class="monster-eye monster-eye-left"></div>
+                <div class="monster-eye monster-eye-right"></div>
+
+                <div class="monster-mouth"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="attack-effect" id="attackEffect">
+            magia
+        </div>
+
+
+        <div class="damage-number" id="damageNumber">
+            -20
+        </div>
+
+    </div>
+
+
+    <h2 id="monsterName">
+        Slime de la oscuridad
+    </h2>
+
+
+    <p class="battle-message" id="battleMessage">
+        Estelito está listo.
+    </p>
+
+
+    <div class="controls">
+
+        <button onclick="moverIzquierda()">
+            izquierda
+        </button>
+
+        <button onclick="saltar()">
+            saltar
+        </button>
+
+        <button onclick="moverDerecha()">
+            derecha
+        </button>
+
+        <button class="attack-button" onclick="atacar()">
+            ataque mágico
+        </button>
+
+        <button onclick="esquivar()">
+            esquivar
+        </button>
+
+    </div>
+
+
+    <button
+        class="start-battle-button"
+        id="startBattleButton"
+        onclick="empezarBatalla()">
+
+        comenzar aventura
+
+    </button>
+
+
+    <section class="victory-screen" id="victoryScreen">
+
+        <p class="small-title">
+            misión completada
+        </p>
+
+        <h2>
+            Estelito derrotó a todos los monstruos
+        </h2>
+
+        <p>
+            el bosque vuelve a estar tranquilo.
+        </p>
+
+        <button onclick="reiniciarBatalla()">
+            jugar otra vez
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1417 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        linear-gradient(
+            #08060c,
+            #1c0f29,
+            #281439,
+            #09060e
+        );
+
+    color: #fff1d3;
+
+    text-align: center;
+
+    overflow-x: hidden;
+}
+
+button {
+    font-family: Georgia, serif;
+
+    border: 2px solid #efcc76;
+
+    background:
+        linear-gradient(
+            90deg,
+            #643377,
+            #8b458e
+        );
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px
+        rgba(239, 204, 118, 0.35);
+}
+
+.small-title {
+    color: #d8a7bf;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+}
+
+
+/* ESTRELLAS */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.stars span {
+    position: absolute;
+
+    color: #efcc76;
+
+    animation: starGlow 2s infinite alternate;
+}
+
+.stars span:nth-child(1) {
+    left: 10%;
+    top: 10%;
+}
+
+.stars span:nth-child(2) {
+    left: 80%;
+    top: 15%;
+}
+
+.stars span:nth-child(3) {
+    left: 20%;
+    top: 40%;
+}
+
+.stars span:nth-child(4) {
+    left: 70%;
+    top: 50%;
+}
+
+.stars span:nth-child(5) {
+    left: 40%;
+    top: 70%;
+}
+
+.stars span:nth-child(6) {
+    left: 85%;
+    top: 80%;
+}
+
+.stars span:nth-child(7) {
+    left: 15%;
+    top: 85%;
+}
+
+@keyframes starGlow {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+
+/* PORTADA */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 100px);
+
+    color: #efcc76;
+
+    margin: 5px;
+
+    text-shadow:
+        0 0 20px #6d377c;
+}
+
+.subtitle {
+    color: #ddb6cb;
+}
+
+
+/* GATO PORTADA */
+
+.main-cat {
+    width: 280px;
+    height: 270px;
+
+    position: relative;
+
+    margin: 30px auto;
+
+    animation: catFloat 2s ease-in-out infinite;
+}
+
+@keyframes catFloat {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.main-cat-body {
+    width: 160px;
+    height: 115px;
+
+    position: absolute;
+
+    left: 60px;
+
+    bottom: 15px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            #716c60,
+            #4e4a43
+        );
+
+    border: 4px solid #25231f;
+}
+
+.body-line {
+    position: absolute;
+
+    width: 13px;
+    height: 60px;
+
+    background: #292723;
+
+    border-radius: 20px;
+}
+
+.body-line-1 {
+    left: 30px;
+    transform: rotate(-20deg);
+}
+
+.body-line-2 {
+    left: 70px;
+}
+
+.body-line-3 {
+    right: 28px;
+    transform: rotate(20deg);
+}
+
+.main-cat-head {
+    width: 145px;
+    height: 125px;
+
+    position: absolute;
+
+    left: 66px;
+
+    top: 50px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            #777164,
+            #575249
+        );
+
+    border: 4px solid #25231f;
+}
+
+.main-ear {
+    width: 45px;
+    height: 50px;
+
+    position: absolute;
+
+    top: -20px;
+
+    background: #625d53;
+
+    border: 4px solid #25231f;
+
+    transform: rotate(45deg);
+
+    z-index: -1;
+}
+
+.main-ear-left {
+    left: 8px;
+}
+
+.main-ear-right {
+    right: 8px;
+}
+
+.main-eye {
+    width: 28px;
+    height: 32px;
+
+    background: #cbd47d;
+
+    border: 3px solid #25231f;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    top: 53px;
+
+    animation: blink 5s infinite;
+}
+
+.main-eye-left {
+    left: 30px;
+}
+
+.main-eye-right {
+    right: 30px;
+}
+
+@keyframes blink {
+    45% {
+        transform: scaleY(1);
+    }
+
+    47% {
+        transform: scaleY(0.1);
+    }
+
+    49% {
+        transform: scaleY(1);
+    }
+}
+
+.main-nose {
+    width: 14px;
+    height: 9px;
+
+    background: #ad7975;
+
+    position: absolute;
+
+    top: 88px;
+    left: 62px;
+
+    border-radius: 50%;
+}
+
+.head-line {
+    width: 7px;
+    height: 30px;
+
+    position: absolute;
+
+    top: 3px;
+
+    background: #292723;
+
+    border-radius: 10px;
+}
+
+.hl1 {
+    left: 45px;
+    transform: rotate(-15deg);
+}
+
+.hl2 {
+    left: 67px;
+}
+
+.hl3 {
+    right: 45px;
+    transform: rotate(15deg);
+}
+
+.main-cat-tail {
+    width: 120px;
+    height: 35px;
+
+    position: absolute;
+
+    right: -5px;
+    bottom: 30px;
+
+    border-radius: 40px;
+
+    background: #514d46;
+
+    border: 4px solid #25231f;
+
+    transform-origin: left;
+
+    animation: tailMove 1.3s infinite alternate;
+}
+
+@keyframes tailMove {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(20deg);
+    }
+}
+
+
+/* SOMBRERO */
+
+.witch-hat {
+    width: 140px;
+    height: 110px;
+
+    position: absolute;
+
+    top: -15px;
+    left: 72px;
+
+    z-index: 10;
+
+    transform: rotate(-8deg);
+}
+
+.witch-hat-top {
+    width: 0;
+    height: 0;
+
+    border-left: 50px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 90px solid #372044;
+
+    position: absolute;
+
+    left: 25px;
+}
+
+.witch-hat-bottom {
+    width: 135px;
+    height: 20px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    background: #5e3371;
+
+    border-radius: 50%;
+
+    border: 2px solid #efcc76;
+}
+
+.witch-hat-band {
+    width: 73px;
+    height: 12px;
+
+    position: absolute;
+
+    left: 30px;
+    bottom: 17px;
+
+    background: #c76b37;
+
+    z-index: 5;
+}
+
+
+/* INVITACION */
+
+.invitation {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 120px 25px;
+}
+
+.invitation h2 {
+    font-size: 45px;
+
+    color: #efcc76;
+}
+
+.details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin: 50px 0;
+}
+
+.detail-box {
+    padding: 30px;
+
+    border: 1px solid #754786;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            95,
+            53,
+            114,
+            0.16
+        );
+}
+
+.detail-box h3 {
+    color: #d8a7bf;
+}
+
+.game-link {
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a94e8d,
+            #d86b3a
+        );
+
+    border: 2px solid #efcc76;
+
+    padding: 18px 35px;
+
+    border-radius: 40px;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.game-link:hover {
+    transform: scale(1.06);
+}
+
+
+/* =========================== */
+/* PAGINA DEL VIDEOJUEGO */
+/* =========================== */
+
+.battle-page {
+    min-height: 100vh;
+
+    padding-bottom: 80px;
+
+    background:
+        linear-gradient(
+            #090711,
+            #1f1230,
+            #08060c
+        );
+}
+
+.back-home {
+    display: inline-block;
+
+    margin: 25px;
+
+    color: #efcc76;
+
+    text-decoration: none;
+}
+
+.game-header {
+    padding: 40px 20px;
+}
+
+.game-header h1 {
+    font-size: clamp(40px, 7vw, 70px);
+
+    color: #efcc76;
+}
+
+
+/* INFORMACION */
+
+.level-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+}
+
+.level-info div {
+    min-width: 120px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(
+            105,
+            60,
+            126,
+            0.22
+        );
+}
+
+.level-info span {
+    display: block;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #d8a7bf;
+}
+
+.level-info strong {
+    color: #efcc76;
+
+    font-size: 25px;
+}
+
+
+/* PANTALLA */
+
+.battle-screen {
+    width: min(900px, 95%);
+
+    height: 520px;
+
+    margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 3px solid #70437f;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            #221436,
+            #442353 55%,
+            #14101b
+        );
+
+    box-shadow:
+        0 0 40px
+        rgba(120, 65, 145, 0.25);
+}
+
+.battle-moon {
+    width: 110px;
+    height: 110px;
+
+    position: absolute;
+
+    right: 70px;
+    top: 50px;
+
+    border-radius: 50%;
+
+    background: #efda92;
+
+    box-shadow:
+        0 0 35px
+        rgba(239, 218, 146, 0.6);
+}
+
+.cloud {
+    position: absolute;
+
+    width: 180px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    animation: clouds 12s linear infinite;
+}
+
+.cloud-one {
+    top: 90px;
+    left: -200px;
+}
+
+.cloud-two {
+    top: 160px;
+    left: -350px;
+
+    animation-delay: 4s;
+}
+
+@keyframes clouds {
+    to {
+        transform: translateX(1200px);
+    }
+}
+
+.mountain {
+    position: absolute;
+
+    bottom: 80px;
+
+    width: 0;
+    height: 0;
+
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-bottom: 260px solid #17111d;
+
+    opacity: 0.85;
+}
+
+.mountain-one {
+    left: -80px;
+}
+
+.mountain-two {
+    right: -100px;
+}
+
+.ground {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background:
+        linear-gradient(
+            #19141b,
+            #070608
+        );
+
+    border-top: 3px solid #31233a;
+}
+
+
+/* ESTELITO JUGADOR */
+
+.battle-cat-player {
+    width: 150px;
+    height: 170px;
+
+    position: absolute;
+
+    left: 80px;
+    bottom: 65px;
+
+    z-index: 20;
+
+    transition:
+        left 0.25s,
+        bottom 0.25s,
+        transform 0.25s;
+}
+
+.battle-cat-body {
+    width: 105px;
+    height: 75px;
+
+    position: absolute;
+
+    bottom: 10px;
+    left: 20px;
+
+    background:
+        linear-gradient(
+            #716b5f,
+            #4c4841
+        );
+
+    border: 4px solid #25231f;
+
+    border-radius: 50%;
+}
+
+.cat-body-stripe {
+    position: absolute;
+
+    width: 10px;
+    height: 45px;
+
+    background: #292723;
+
+    border-radius: 20px;
+}
+
+.cbs1 {
+    left: 22px;
+
+    transform: rotate(-20deg);
+}
+
+.cbs2 {
+    left: 47px;
+}
+
+.cbs3 {
+    right: 20px;
+
+    transform: rotate(20deg);
+}
+
+.battle-cat-head {
+    width: 95px;
+    height: 85px;
+
+    position: absolute;
+
+    left: 25px;
+    top: 28px;
+
+    background: #696358;
+
+    border: 4px solid #25231f;
+
+    border-radius: 50%;
+}
+
+.battle-cat-ear {
+    width: 30px;
+    height: 34px;
+
+    position: absolute;
+
+    top: -15px;
+
+    background: #696358;
+
+    border: 3px solid #25231f;
+
+    transform: rotate(45deg);
+
+    z-index: -1;
+}
+
+.battle-cat-ear-left {
+    left: 5px;
+}
+
+.battle-cat-ear-right {
+    right: 5px;
+}
+
+.battle-cat-eye {
+    width: 16px;
+    height: 21px;
+
+    position: absolute;
+
+    top: 37px;
+
+    background: #cbd47d;
+
+    border: 2px solid #25231f;
+
+    border-radius: 50%;
+}
+
+.battle-cat-eye-left {
+    left: 22px;
+}
+
+.battle-cat-eye-right {
+    right: 22px;
+}
+
+.battle-cat-nose {
+    width: 10px;
+    height: 7px;
+
+    position: absolute;
+
+    left: 39px;
+    top: 60px;
+
+    background: #ad7975;
+
+    border-radius: 50%;
+}
+
+.cat-face-stripe {
+    width: 5px;
+    height: 19px;
+
+    position: absolute;
+
+    top: 3px;
+
+    background: #292723;
+}
+
+.cfs1 {
+    left: 30px;
+}
+
+.cfs2 {
+    left: 43px;
+}
+
+.cfs3 {
+    right: 30px;
+}
+
+.battle-cat-tail {
+    width: 80px;
+    height: 23px;
+
+    position: absolute;
+
+    bottom: 26px;
+    right: -40px;
+
+    background: #4f4b44;
+
+    border: 3px solid #25231f;
+
+    border-radius: 30px;
+
+    transform-origin: left;
+
+    animation: battleTail 0.5s infinite alternate;
+}
+
+@keyframes battleTail {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(20deg);
+    }
+}
+
+
+/* SOMBRERO EN LA PELEA */
+
+.battle-witch-hat {
+    width: 95px;
+    height: 80px;
+
+    position: absolute;
+
+    top: -18px;
+    left: 30px;
+
+    z-index: 30;
+
+    transform: rotate(-8deg);
+}
+
+.battle-hat-top {
+    width: 0;
+    height: 0;
+
+    border-left: 35px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 65px solid #362042;
+
+    position: absolute;
+
+    left: 16px;
+}
+
+.battle-hat-bottom {
+    width: 90px;
+    height: 13px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    background: #623575;
+
+    border: 2px solid #efcc76;
+
+    border-radius: 50%;
+}
+
+.battle-hat-band {
+    width: 51px;
+    height: 8px;
+
+    background: #ca6836;
+
+    position: absolute;
+
+    left: 17px;
+    bottom: 12px;
+}
+
+
+/* MONSTRUO */
+
+.monster {
+    width: 180px;
+    height: 210px;
+
+    position: absolute;
+
+    right: 90px;
+    bottom: 65px;
+
+    z-index: 15;
+
+    transition: 0.4s;
+
+    animation: monsterFloat 1.2s infinite alternate;
+}
+
+@keyframes monsterFloat {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.monster-body {
+    width: 150px;
+    height: 165px;
+
+    position: absolute;
+
+    left: 15px;
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            #76498c,
+            #34223f
+        );
+
+    border: 4px solid #1a141e;
+
+    border-radius:
+        48% 48% 35% 35%;
+}
+
+.monster-eye {
+    width: 28px;
+    height: 34px;
+
+    background: #efcc76;
+
+    position: absolute;
+
+    top: 50px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px
+        #efcc76;
+}
+
+.monster-eye-left {
+    left: 30px;
+}
+
+.monster-eye-right {
+    right: 30px;
+}
+
+.monster-mouth {
+    width: 65px;
+    height: 30px;
+
+    position: absolute;
+
+    left: 39px;
+    bottom: 35px;
+
+    border-bottom: 5px solid #19131c;
+
+    border-radius: 50%;
+}
+
+.horn {
+    position: absolute;
+
+    top: 5px;
+
+    width: 0;
+    height: 0;
+
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 55px solid #b67b5a;
+}
+
+.horn-left {
+    left: 15px;
+
+    transform: rotate(-25deg);
+}
+
+.horn-right {
+    right: 15px;
+
+    transform: rotate(25deg);
+}
+
+
+/* MAGIA */
+
+.magic-orb {
+    width: 28px;
+    height: 28px;
+
+    position: absolute;
+
+    right: -25px;
+    top: 75px;
+
+    border-radius: 50%;
+
+    background: #d978ff;
+
+    box-shadow:
+        0 0 10px #d978ff,
+        0 0 25px #d978ff,
+        0 0 45px #efcc76;
+
+    opacity: 0;
+}
+
+.magic-orb.shoot {
+    animation:
+        magicShot
+        0.5s ease-out;
+}
+
+@keyframes magicShot {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(500px)
+            scale(1.4);
+    }
+}
+
+
+/* EFECTO ATAQUE */
+
+.attack-effect {
+    position: absolute;
+
+    right: 220px;
+    bottom: 230px;
+
+    color: #efcc76;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    opacity: 0;
+
+    z-index: 40;
+}
+
+.attack-effect.show {
+    animation:
+        attackText
+        0.6s;
+}
+
+@keyframes attackText {
+
+    0% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+
+.damage-number {
+    position: absolute;
+
+    right: 130px;
+    bottom: 300px;
+
+    color: #efcc76;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    opacity: 0;
+}
+
+.damage-number.show {
+    animation: damageMove 0.8s;
+}
+
+@keyframes damageMove {
+
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+}
+
+
+/* MOVIMIENTOS */
+
+.jump {
+    animation: playerJump 0.65s;
+}
+
+@keyframes playerJump {
+
+    50% {
+        transform:
+            translateY(-100px)
+            rotate(-8deg);
+    }
+
+}
+
+.attack {
+    animation: playerAttack 0.45s;
+}
+
+@keyframes playerAttack {
+
+    50% {
+        transform:
+            translateX(65px)
+            rotate(10deg);
+    }
+
+}
+
+.monster-hit {
+    animation: monsterHit 0.4s;
+}
+
+@keyframes monsterHit {
+
+    25% {
+        transform:
+            translateX(-25px)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateX(20px)
+            rotate(7deg);
+    }
+
+}
+
+.monster-defeated {
+    animation:
+        monsterDefeated
+        0.8s forwards;
+}
+
+@keyframes monsterDefeated {
+
+    to {
+        transform:
+            translateY(160px)
+            rotate(30deg)
+            scale(0.4);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* CONTROLES */
+
+#monsterName {
+    color: #efcc76;
+
+    margin-top: 30px;
+}
+
+.battle-message {
+    color: #d8a7bf;
+
+    min-height: 30px;
+
+    font-size: 18px;
+}
+
+.controls {
+    max-width: 800px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.attack-button {
+    background:
+        linear-gradient(
+            90deg,
+            #a04999,
+            #c66939
+        );
+}
+
+.start-battle-button {
+    margin-top: 20px;
+}
+
+
+/* VICTORIA */
+
+.victory-screen {
+    display: none;
+
+    max-width: 650px;
+
+    margin: 80px auto;
+
+    padding: 50px 30px;
+
+    border: 2px solid #efcc76;
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            95,
+            53,
+            114,
+            0.18
+        );
+}
+
+.victory-screen h2 {
+    color: #efcc76;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 50px;
+
+    background: #070609;
+}
+
+
+/* TELEFONO */
+
+@media (max-width: 650px) {
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .battle-screen {
+        height: 470px;
+    }
+
+    .battle-cat-player {
+        transform: scale(0.8);
+
+        left: 20px;
+    }
+
+    .monster {
+        transform: scale(0.75);
+
+        right: 10px;
+    }
+
+    .controls button {
+        min-width: 42%;
+
+        min-height: 50px;
+    }
+
+}
